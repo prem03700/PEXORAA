@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>PEXORA — Design. Develop. Transcend.</title>
-<meta name="description" content="PEXORA — Futuristic web development, immersive design, and digital transformation."/>
+<title>PEXXORAA — Design. Develop. execute.</title>
+<meta name="description" content="PEXXORAA — Futuristic web development, immersive design, and digital transformation."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
@@ -648,6 +648,8 @@ body::before{
 .cdet-ico svg{width:18px;height:18px;color:var(--cyan)}
 .cdet-lbl{font-size:.66rem;color:var(--gray2);margin-bottom:2px;text-transform:uppercase;letter-spacing:.08em}
 .cdet-val{font-size:.87rem;font-weight:600}
+a.cdet-val{cursor:pointer;transition:var(--t)}
+a.cdet-val:hover{color:var(--cyan)}
 .cform{
   padding:40px;border-radius:var(--r-xl);
   background:var(--glass2);border:1px solid rgba(0,245,255,.1);
@@ -665,6 +667,7 @@ body::before{
 .fc2:focus{border-color:var(--cyan);background:rgba(0,245,255,.05);box-shadow:0 0 0 3px rgba(0,245,255,.1)}
 .fc2::placeholder{color:var(--gray3)}
 textarea.fc2{resize:vertical;min-height:108px}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
 .fbtns{display:flex;gap:12px;flex-wrap:wrap}
 .cpromo{
   margin-top:22px;padding:24px;border-radius:var(--r-xl);
@@ -802,6 +805,9 @@ footer::before{
   <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
   </symbol>
+  <symbol id="ic-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.43 5.13L2 22l5.13-1.5a9.85 9.85 0 0 0 4.91 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.06h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.91.92-3.04-.2-.31a8.13 8.13 0 0 1-1.27-4.38c0-4.51 3.67-8.18 8.19-8.18 2.19 0 4.24.85 5.79 2.4a8.13 8.13 0 0 1 2.4 5.79c0 4.51-3.68 8.18-8.21 8.18zm4.49-6.13c-.25-.12-1.45-.71-1.68-.8-.22-.08-.39-.12-.55.12-.16.25-.63.8-.78.96-.14.16-.29.18-.53.06-.25-.12-1.06-.39-2.02-1.25-.75-.66-1.25-1.49-1.4-1.74-.14-.25-.02-.39.11-.51.12-.12.27-.31.41-.47.13-.16.18-.27.27-.45.08-.18.04-.33-.04-.46-.08-.12-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38l-.43-.01c-.14 0-.37.05-.57.27-.2.22-.76.74-.76 1.8 0 1.06.78 2.08.89 2.22.11.14 1.49 2.27 3.61 3.09 1.79.69 2.16.55 2.55.52.39-.04 1.27-.52 1.45-1.02.18-.51.18-.94.13-1.03-.05-.1-.21-.16-.46-.27z"/>
+  </symbol>
   <symbol id="ic-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/>
   </symbol>
@@ -855,7 +861,7 @@ footer::before{
             <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
           </svg>
         </div>
-        PEXORA
+        PEXXORAA
       </a>
       <ul class="nl">
         <li><a href="#about">About</a></li>
@@ -895,7 +901,7 @@ footer::before{
     <div class="blip"></div>
     <div class="blip"></div>
   </div>
-  <div class="chip gl2 chip-a">
+<!-- <div class="chip gl2 chip-a">
     <div class="chip-icon" style="background:rgba(0,245,255,.14)">
       <svg width="18" height="18" style="color:var(--cyan)"><use href="#ic-rocket"/></svg>
     </div>
@@ -912,15 +918,15 @@ footer::before{
       <div class="chip-lbl">AI-Powered</div>
       <div class="chip-sub">Next-gen intelligence</div>
     </div>
-  </div>
+  </div>          
   <div class="chip gl2 chip-c">
     <div class="chip-icon" style="background:rgba(240,171,252,.14)">
       <svg width="18" height="18" style="color:var(--rose2)"><use href="#ic-check"/></svg>
-    </div>
-    <div>
+    </div>      -
+    <div>     
       <div class="chip-lbl">100% Satisfaction</div>
     </div>
-  </div>
+  </div>                -->
   <div class="container">
     <div class="hcontent">
       <div class="hbadge">
@@ -930,18 +936,18 @@ footer::before{
       <h1 class="hh1">
         Design.<br>
         <span class="gt">Develop.</span><br>
-        Transcend.
+        Elevate.
       </h1>
-      <p class="hsub">PEXORA builds futuristic digital experiences — immersive websites, AI-powered solutions, and cutting-edge interfaces that elevate brands beyond the ordinary.</p>
+      <p class="hsub">PEXXORAA builds futuristic digital experiences — immersive websites, and cutting-edge interfaces that elevate brands beyond the ordinary.</p>
       <div class="hbtns">
         <a href="#contact" class="btn btn-cyan">Start Your Project <svg width="15" height="15"><use href="#ic-arrow-r"/></svg></a>
         <a href="#services" class="btn btn-out">Explore Services</a>
       </div>
       <div class="hstats">
-        <div><div class="hsn" data-count="80" data-suffix="+">0+</div><div class="hsl">Projects Delivered</div></div>
-        <div><div class="hsn" data-count="100" data-suffix="%">0%</div><div class="hsl">Client Satisfaction</div></div>
+        <div><div class="hsn" data-count=" " data-suffix="+">0+</div><div class="hsl">Projects Delivered</div></div>
+        <div><div class="hsn" data-count=" " data-suffix="%">0%</div><div class="hsl">Client Satisfaction</div></div>
         <div><div class="hsn" data-count="20" data-suffix="+">0+</div><div class="hsl">Technologies</div></div>
-        <div><div class="hsn" data-count="7" data-suffix="">0</div><div class="hsl">Days Avg. Delivery</div></div>
+        <div><div class="hsn" data-count="14" data-suffix="">0</div><div class="hsl">Days Avg. Delivery</div></div>
       </div>
     </div>
   </div>
@@ -951,24 +957,24 @@ footer::before{
 <div class="ticker">
   <div class="ttrack">
     <div class="titem"><svg><use href="#ic-globe"/></svg> Web Development</div>
-    <div class="titem"><svg><use href="#ic-cpu"/></svg> AI Solutions</div>
+<!--    <div class="titem"><svg><use href="#ic-cpu"/></svg> AI Solutions</div>    -->
     <div class="titem"><svg><use href="#ic-pen"/></svg> UI / UX Design</div>
     <div class="titem"><svg><use href="#ic-layers"/></svg> Branding</div>
     <div class="titem"><svg><use href="#ic-shield"/></svg> Cybersecurity</div>
     <div class="titem"><svg><use href="#ic-trend"/></svg> Digital Marketing</div>
     <div class="titem"><svg><use href="#ic-code"/></svg> Custom Software</div>
-    <div class="titem"><svg><use href="#ic-brain"/></svg> Machine Learning</div>
-    <div class="titem"><svg><use href="#ic-rocket"/></svg> Performance</div>
+<!--    <div class="titem"><svg><use href="#ic-brain"/></svg> Machine Learning</div>    -->
+<!--    <div class="titem"><svg><use href="#ic-rocket"/></svg> Performance</div>    -->
     <!-- duplicate for seamless loop -->
     <div class="titem"><svg><use href="#ic-globe"/></svg> Web Development</div>
-    <div class="titem"><svg><use href="#ic-cpu"/></svg> AI Solutions</div>
+<!--    <div class="titem"><svg><use href="#ic-cpu"/></svg> AI Solutions</div>    -->
     <div class="titem"><svg><use href="#ic-pen"/></svg> UI / UX Design</div>
     <div class="titem"><svg><use href="#ic-layers"/></svg> Branding</div>
     <div class="titem"><svg><use href="#ic-shield"/></svg> Cybersecurity</div>
     <div class="titem"><svg><use href="#ic-trend"/></svg> Digital Marketing</div>
     <div class="titem"><svg><use href="#ic-code"/></svg> Custom Software</div>
-    <div class="titem"><svg><use href="#ic-brain"/></svg> Machine Learning</div>
-    <div class="titem"><svg><use href="#ic-rocket"/></svg> Performance</div>
+<!--    <div class="titem"><svg><use href="#ic-brain"/></svg> Machine Learning</div>    -->
+<!--    <div class="titem"><svg><use href="#ic-rocket"/></svg> Performance</div>    -->
   </div>
 </div>
 
@@ -985,13 +991,14 @@ footer::before{
             <h4>Digital Presence</h4>
             <p>We craft immersive online experiences that make your brand unforgettable in a crowded digital space.</p>
           </div>
-          <div class="ac ac2">
+  <!--    <div class="ac ac2">
             <div class="ac-icon" style="background:rgba(124,58,237,.18)">
               <svg width="22" height="22" style="color:var(--violet2)"><use href="#ic-cpu"/></svg>
             </div>
             <h4>AI-First Engineering</h4>
             <p>From intelligent automation to generative interfaces, we embed AI at the core of every solution.</p>
-          </div>
+          </div>       
+   -->
           <div class="ac ac3">
             <div class="ac-icon" style="background:rgba(240,171,252,.14)">
               <svg width="22" height="22" style="color:var(--rose2)"><use href="#ic-trend"/></svg>
@@ -1004,14 +1011,14 @@ footer::before{
       <div class="sr">
         <div class="eyebrow">Who We Are</div>
         <h2 class="sec-title">Building the <span class="gt">Future of Digital</span></h2>
-        <p class="sec-sub" style="margin-bottom:28px">PEXORA is a next-generation digital studio that fuses creative design, precision engineering, and artificial intelligence to build digital experiences that feel like the future — today.</p>
-        <p style="color:var(--gray1);font-size:.9rem;line-height:1.85;margin-bottom:28px">We work with startups, growing businesses, and established brands to craft websites, apps, and digital systems that don't just look impressive — they perform, convert, and scale.</p>
+        <p class="sec-sub" style="margin-bottom:28px">PEXXORAA is a next-generation digital studio that fuses creative design, precision engineering, and artificial intelligence to build digital experiences that feel like the future — today.</p>
+        <p style="color:var(--gray1);font-size:.9rem;line-height:1.85;margin-bottom:28px">We Will work with startups, growing businesses, and established brands to craft websites, apps, and digital systems that don't just look impressive — they perform, convert, and scale.</p>
         <div class="vals srs">
           <div class="vchip"><span class="vchip-dot"></span>Affordable Pricing</div>
-          <div class="vchip"><span class="vchip-dot"></span>Mobile-First Design</div>
+      <!--    <div class="vchip"><span class="vchip-dot"></span>Mobile-First Design</div>     -->
           <div class="vchip"><span class="vchip-dot"></span>Fast Turnaround</div>
           <div class="vchip"><span class="vchip-dot"></span>Ongoing Support</div>
-          <div class="vchip"><span class="vchip-dot"></span>Transparent Process</div>
+      <!--    <div class="vchip"><span class="vchip-dot"></span>Transparent Process</div>      -->
           <div class="vchip"><span class="vchip-dot"></span>Scalable Solutions</div>
         </div>
         <div class="mvrow srs">
@@ -1192,8 +1199,8 @@ footer::before{
           <div class="wpt">
             <div class="wpt-ico"><svg><use href="#ic-clock"/></svg></div>
             <div>
-              <h4>Lightning Fast Support</h4>
-              <p>Direct access to your dedicated team — no ticketing system, no waiting.</p>
+              <h4>Fast Support</h4>
+              <p>Direct access to your dedicated team — no ticketing system , Response in 24 Hours.</p>
             </div>
           </div>
           <div class="wpt">
@@ -1207,15 +1214,15 @@ footer::before{
       </div>
       <div class="sgr sr">
         <div class="s3d">
-          <span class="sn gt3" data-count="80" data-suffix="+">80+</span>
+          <span class="sn gt3" data-count="0" data-suffix="+">0+</span>
           <span class="sl">Projects Delivered</span>
         </div>
         <div class="s3d">
-          <span class="sn gt2" data-count="100" data-suffix="%">100%</span>
+          <span class="sn gt2" data-count="" data-suffix="%">1000%</span>
           <span class="sl">Client Satisfaction</span>
         </div>
         <div class="s3d">
-          <span class="sn" style="background:linear-gradient(120deg,var(--rose),var(--rose2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text" data-count="7" data-suffix="">7</span>
+          <span class="sn" style="background:linear-gradient(120deg,var(--rose),var(--rose2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text" data-count="7" data-suffix="">14</span>
           <span class="sl">Days Avg. Delivery</span>
         </div>
         <div class="s3d">
@@ -1227,7 +1234,12 @@ footer::before{
   </div>
 </section>
 
+
+
+
+
 <!-- PORTFOLIO -->
+<!--
 <section id="portfolio">
   <div class="container">
     <div class="sr" style="text-align:center;margin-bottom:64px">
@@ -1311,8 +1323,12 @@ footer::before{
     </div>
   </div>
 </section>
+-->
+
+
 
 <!-- TESTIMONIALS -->
+<!--
 <section id="testi">
   <div class="container">
     <div class="sr" style="text-align:center;margin-bottom:64px">
@@ -1325,7 +1341,7 @@ footer::before{
         <div class="tstars">
           <svg class="tstar"><use href="#ic-star"/></svg><svg class="tstar"><use href="#ic-star"/></svg><svg class="tstar"><use href="#ic-star"/></svg><svg class="tstar"><use href="#ic-star"/></svg><svg class="tstar"><use href="#ic-star"/></svg>
         </div>
-        <p class="ttxt">PEXORA completely transformed our online presence. In 30 days we went from a dated website to a conversion machine. Lead gen up 65%.</p>
+        <p class="ttxt">PEXXORAA completely transformed our online presence. In 30 days we went from a dated website to a conversion machine. Lead gen up _%.</p>
         <div class="tauth">
           <div class="tav" style="background:linear-gradient(135deg,var(--cyan),var(--cyan3))">SC</div>
           <div>
@@ -1365,6 +1381,9 @@ footer::before{
     </div>
   </div>
 </section>
+-->
+
+
 
 <!-- PROCESS -->
 <section id="process">
@@ -1431,12 +1450,12 @@ footer::before{
         <p class="sec-sub">Everything you need to know before we start building together.</p>
         <div class="fnote">
           <h4 style="font-family:'Orbitron',sans-serif;font-size:.85rem;margin-bottom:8px;color:var(--cyan)">Still have questions?</h4>
-          <p style="font-size:.83rem;color:var(--gray1);line-height:1.75">Our team responds within 2 hours. Reach us at <a href="mailto:hello@pexora.com" style="color:var(--cyan)">hello@pexora.com</a> or use the contact form.</p>
+          <p style="font-size:.83rem;color:var(--gray1);line-height:1.75">Our team responds within 24 hours. Reach us at <a href="mailto:pexxoraa@gmail.com" style="color:var(--cyan)">pexxoraa@gmail.com</a> or use the contact form.</p>
         </div>
       </div>
       <div class="flist sr">
         <div class="fitem">
-          <div class="fq">What makes PEXORA different from other agencies?<svg class="fchev"><use href="#ic-chevdown"/></svg></div>
+          <div class="fq">What makes PEXXORAA different from other agencies?<svg class="fchev"><use href="#ic-chevdown"/></svg></div>
           <div class="fa"><div class="fain">We combine design artistry, engineering precision, and AI expertise under one roof. Unlike traditional agencies, we're builders first — every team member codes, designs, or does both. We don't outsource, and we don't pad timelines.</div></div>
         </div>
         <div class="fitem">
@@ -1453,7 +1472,7 @@ footer::before{
         </div>
         <div class="fitem">
           <div class="fq">What technologies do you work with?<svg class="fchev"><use href="#ic-chevdown"/></svg></div>
-          <div class="fa"><div class="fain">React, Next.js, Node.js, Python, TypeScript, PostgreSQL, MongoDB, AWS, Vercel, Supabase, OpenAI, LangChain, Stripe, and more. We use the best tool for the job — not just the most popular one.</div></div>
+          <div class="fa"><div class="fain">React, Next.js, Node.js,Html&css, Python, TypeScript, PostgreSQL, MongoDB, AWS, Vercel, Supabase, LangChain, and more. We use the best tool for the job — not just the most popular one.</div></div>
         </div>
         <div class="fitem">
           <div class="fq">How is pricing structured?<svg class="fchev"><use href="#ic-chevdown"/></svg></div>
@@ -1479,14 +1498,21 @@ footer::before{
             <div class="cdet-ico"><svg><use href="#ic-mail"/></svg></div>
             <div>
               <div class="cdet-lbl">Email</div>
-              <div class="cdet-val">hello@pexora.com</div>
+              <a class="cdet-val" href="mailto:pexxoraa@gmail.com" style="display:block">pexxoraa@gmail.com</a>
             </div>
           </div>
           <div class="cdet">
             <div class="cdet-ico"><svg><use href="#ic-phone"/></svg></div>
             <div>
               <div class="cdet-lbl">Phone</div>
-              <div class="cdet-val">+91 82476 99591</div>
+              <a class="cdet-val" href="tel:+918247699591" style="display:block">+91 82476 99591</a>
+            </div>
+          </div>
+          <div class="cdet">
+            <div class="cdet-ico" style="background:rgba(37,211,102,.12)"><svg style="color:#25D366"><use href="#ic-whatsapp"/></svg></div>
+            <div>
+              <div class="cdet-lbl">WhatsApp</div>
+              <a class="cdet-val" href="https://wa.me/918247699591" target="_blank" rel="noopener" style="display:block">+91 82476 99591</a>
             </div>
           </div>
           <div class="cdet">
@@ -1500,7 +1526,7 @@ footer::before{
             <div class="cdet-ico"><svg><use href="#ic-clock"/></svg></div>
             <div>
               <div class="cdet-lbl">Response Time</div>
-              <div class="cdet-val">Under 2 hours</div>
+              <div class="cdet-val">Under 24 hours</div>
             </div>
           </div>
         </div>
@@ -1512,24 +1538,24 @@ footer::before{
       <div class="cform sr">
         <h3 style="font-family:'Orbitron',sans-serif;font-size:1.1rem;margin-bottom:28px;letter-spacing:.02em">Send Us a Message</h3>
         <div class="frow">
-          <div class="fg"><label>First Name</label><input type="text" class="fc2" placeholder="Alex"></div>
-          <div class="fg"><label>Last Name</label><input type="text" class="fc2" placeholder="Johnson"></div>
+          <div class="fg"><label for="cf-first">First Name <span style="color:#f43f5e">*</span></label><input id="cf-first" name="first_name" type="text" class="fc2" placeholder="Enter your name" autocomplete="given-name"></div>
+          <div class="fg"><label for="cf-last">Last Name <span style="color:#f43f5e">*</span></label><input id="cf-last" name="last_name" type="text" class="fc2" placeholder="Surname" autocomplete="family-name"></div>
         </div>
-        <div class="fg"><label>Email Address</label><input type="email" class="fc2" placeholder="alex@company.com"></div>
-        <div class="fg"><label>Phone Number</label><input type="tel" class="fc2" placeholder="+1 (555) 000-0000"></div>
+        <div class="fg"><label for="cf-email">Email Address <span style="color:#f43f5e">*</span></label><input id="cf-email" name="email" type="email" class="fc2" placeholder="name@company.com" autocomplete="email"></div>
+        <div class="fg"><label for="cf-phone">Phone Number</label><input id="cf-phone" name="phone" type="tel" class="fc2" placeholder="+91 (000) 000-0000" autocomplete="tel"></div>
         <div class="fg">
-          <label>Service Interested In</label>
-          <select class="fc2">
+          <label for="cf-service">Service Interested In <span style="color:#f43f5e">*</span></label>
+          <select id="cf-service" name="service" class="fc2">
             <option value="" style="background:#0d1220">Select a service…</option>
-            <option style="background:#0d1220">Web Development</option>
-            <option style="background:#0d1220">AI Integration</option>
-            <option style="background:#0d1220">UI / UX Design</option>
-            <option style="background:#0d1220">Digital Marketing</option>
-            <option style="background:#0d1220">Website Maintenance</option>
-            <option style="background:#0d1220">Custom Software</option>
+            <option value="Web Development" style="background:#0d1220">Web Development</option>
+            <option value="AI Integration" style="background:#0d1220">AI Integration</option>
+            <option value="UI / UX Design" style="background:#0d1220">UI / UX Design</option>
+            <option value="Digital Marketing" style="background:#0d1220">Digital Marketing</option>
+            <option value="Website Maintenance" style="background:#0d1220">Website Maintenance</option>
+            <option value="Custom Software" style="background:#0d1220">Custom Software</option>
           </select>
         </div>
-        <div class="fg"><label>Project Details</label><textarea class="fc2" placeholder="Tell us about your project, goals, and timeline…"></textarea></div>
+        <div class="fg"><label for="cf-msg">Project Details <span style="color:#f43f5e">*</span></label><textarea id="cf-msg" name="message" class="fc2" placeholder="Tell us about your project, goals, and timeline…"></textarea></div>
         <div class="fbtns">
           <button class="btn btn-cyan" onclick="handleSub(this)" style="flex:1;justify-content:center">
             Send Message <svg width="15" height="15"><use href="#ic-send"/></svg>
@@ -1551,7 +1577,7 @@ footer::before{
               <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
             </svg>
           </div>
-          PEXORA
+          PEXXORAA
         </div>
         <p>A next-generation digital studio building futuristic experiences for forward-thinking brands.</p>
         <div class="fsoc">
@@ -1584,7 +1610,7 @@ footer::before{
       <div class="fcol">
         <h5>Contact</h5>
         <ul class="flinks">
-          <li><a href="mailto:hello@pexora.com">hello@pexora.com</a></li>
+          <li><a href="mailto:pexxoraa@gmail.com">pexxoraa@gmail.com</a></li>
           <li><a href="tel:+918247699591">+91 82476 99591</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Get a Quote</a></li>
@@ -1593,7 +1619,7 @@ footer::before{
       </div>
     </div>
     <div class="fbot">
-      <p>© 2026 <span>PEXORA</span>. All Rights Reserved.</p>
+      <p>© 2026 <span>PEXXORAA</span>. All Rights Reserved.</p>
       <div class="ftag">Design. Develop. Transcend.</div>
       <p style="font-size:.72rem;color:var(--gray3)">Privacy Policy · Terms of Service</p>
     </div>
@@ -1601,6 +1627,18 @@ footer::before{
 </footer>
 
 <script>
+/*
+  ╔══════════════════════════════════════════════════════╗
+  ║  EMAILJS SETUP — 3 steps to make the form live       ║
+  ║  1. Sign up free at https://www.emailjs.com          ║
+  ║  2. Create a Service (Gmail/Outlook) → copy Service ID║
+  ║  3. Create an Email Template → copy Template ID      ║
+  ║     Template variables: {{first_name}}, {{last_name}},║
+  ║     {{email}}, {{phone}}, {{service}}, {{message}}   ║
+  ║  4. Copy your Public Key from Account > API Keys     ║
+  ║  5. Replace the 3 placeholders below with your values║
+  ╚══════════════════════════════════════════════════════╝
+*/
 /* ── THREE.js Hero Canvas ── */
 (function(){
   const canvas = document.getElementById('hcanvas');
@@ -1747,15 +1785,143 @@ document.querySelectorAll('.fq').forEach(q=>{
   });
 });
 
-/* ── Form submit ── */
+/* ── Form submit via EmailJS ── */
+(function(){
+  // Load EmailJS SDK
+  var s = document.createElement('script');
+  s.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+  s.onload = function(){
+    // TODO: Replace with your own EmailJS Public Key from https://www.emailjs.com
+    emailjs.init({ publicKey: 'RxvX8NhHlqFaSSVj1' });
+  };
+  document.head.appendChild(s);
+})();
+
+function showFieldError(input, msg){
+  input.style.borderColor = '#f43f5e';
+  input.style.boxShadow   = '0 0 0 3px rgba(244,63,94,.15)';
+  var fg = input.closest('.fg');
+  var existing = fg.querySelector('.ferr');
+  if(!existing){
+    var err = document.createElement('span');
+    err.className = 'ferr';
+    err.style.cssText = 'font-size:.68rem;color:#f43f5e;margin-top:2px';
+    err.textContent = msg;
+    fg.appendChild(err);
+  }
+}
+
+function clearFieldError(input){
+  input.style.borderColor = '';
+  input.style.boxShadow   = '';
+  var fg = input.closest('.fg');
+  var existing = fg && fg.querySelector('.ferr');
+  if(existing) existing.remove();
+}
+
+// Live validation: clear error as user types/changes
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.cform .fc2').forEach(function(f){
+    f.addEventListener('input',  function(){ clearFieldError(f); });
+    f.addEventListener('change', function(){ clearFieldError(f); });
+  });
+});
+
+function validateForm(form){
+  var ok = true;
+  var firstName = form.querySelector('[name="first_name"]');
+  var lastName  = form.querySelector('[name="last_name"]');
+  var email     = form.querySelector('[name="email"]');
+  var phone     = form.querySelector('[name="phone"]');
+  var service   = form.querySelector('[name="service"]');
+  var message   = form.querySelector('[name="message"]');
+
+  if(!firstName.value.trim()){
+    showFieldError(firstName, 'First name is required'); ok = false;
+  }
+  if(!lastName.value.trim()){
+    showFieldError(lastName, 'Last name is required'); ok = false;
+  }
+  var emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!email.value.trim()){
+    showFieldError(email, 'Email is required'); ok = false;
+  } else if(!emailRx.test(email.value.trim())){
+    showFieldError(email, 'Enter a valid email address'); ok = false;
+  }
+  if(!service.value){
+    showFieldError(service, 'Please select a service'); ok = false;
+  }
+  if(!message.value.trim() || message.value.trim().length < 10){
+    showFieldError(message, 'Please describe your project (at least 10 characters)'); ok = false;
+  }
+  return ok;
+}
+
 function handleSub(btn){
-  const orig = btn.innerHTML;
-  btn.innerHTML = 'Sending…'; btn.disabled = true;
-  setTimeout(()=>{
-    btn.innerHTML = '<svg width="15" height="15"><use href="#ic-check"/></svg> Message Sent!';
-    btn.style.background = 'linear-gradient(135deg,#007a82,#00f5ff)';
-    setTimeout(()=>{ btn.innerHTML=orig; btn.style.background=''; btn.disabled=false; }, 3200);
-  }, 1400);
+  var form = btn.closest('.cform');
+  // Clear all previous errors first
+  form.querySelectorAll('.fc2').forEach(function(f){ clearFieldError(f); });
+  form.querySelectorAll('.ferr').forEach(function(e){ e.remove(); });
+
+  if(!validateForm(form)) return;
+
+  var orig = btn.innerHTML;
+  btn.innerHTML = '<svg width="15" height="15" style="animation:spin .7s linear infinite"><use href="#ic-send"/></svg> Sending…';
+  btn.disabled = true;
+
+  var templateParams = {
+    first_name : form.querySelector('[name="first_name"]').value.trim(),
+    last_name  : form.querySelector('[name="last_name"]').value.trim(),
+    email      : form.querySelector('[name="email"]').value.trim(),
+    phone      : form.querySelector('[name="phone"]').value.trim() || 'Not provided',
+    service    : form.querySelector('[name="service"]').value,
+    message    : form.querySelector('[name="message"]').value.trim(),
+  };
+
+  // TODO: Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your EmailJS values
+  emailjs.send('service_ti3emgb', 'template_c9s2s3u', templateParams)
+    .then(function(){
+      btn.innerHTML = '<svg width="15" height="15"><use href="#ic-check"/></svg> Message Sent!';
+      btn.style.background = 'linear-gradient(135deg,#007a82,#00f5ff)';
+      btn.style.color = '#000';
+      // Show success banner
+      showContactBanner(form, 'success', "🚀 Your message is on its way! We'll reply within 24 hours.");
+      form.querySelectorAll('.fc2').forEach(function(f){
+        if(f.tagName === 'SELECT') f.value = '';
+        else f.value = '';
+      });
+      setTimeout(function(){
+        btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false;
+      }, 4000);
+    })
+    .catch(function(err){
+      console.error('EmailJS error:', err);
+      btn.innerHTML = orig; btn.disabled = false;
+      showContactBanner(form, 'error', '⚠️ Failed to send. Please email us directly at pexxoraa@gmail.com');
+    });
+}
+
+function showContactBanner(form, type, msg){
+  var existing = form.querySelector('.cbanner');
+  if(existing) existing.remove();
+  var banner = document.createElement('div');
+  banner.className = 'cbanner';
+  var isSuccess = type === 'success';
+  banner.style.cssText = [
+    'margin-top:16px;padding:14px 18px;border-radius:10px;font-size:.84rem;line-height:1.6;',
+    'border:1px solid ' + (isSuccess ? 'rgba(0,245,255,.3)' : 'rgba(244,63,94,.35)') + ';',
+    'background:' + (isSuccess ? 'rgba(0,245,255,.07)' : 'rgba(244,63,94,.08)') + ';',
+    'color:' + (isSuccess ? 'var(--cyan)' : '#f87171') + ';',
+    'transition:opacity .4s ease;'
+  ].join('');
+  banner.textContent = msg;
+  form.appendChild(banner);
+  if(isSuccess){
+    setTimeout(function(){
+      banner.style.opacity = '0';
+      setTimeout(function(){ banner.remove(); }, 400);
+    }, 6000);
+  }
 }
 
 /* ── Smooth scroll ── */
